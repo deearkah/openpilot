@@ -133,10 +133,10 @@ int main(int argc, char **argv) {
   int err;
   err = set_realtime_priority(54);
   assert(err == 0);
-  err = set_core_affinity(Hardware::EON() ? 2 : 7);
+  err = set_core_affinity(2);
   assert(err == 0);
 
-  bool wide_camera = Hardware::TICI() ? Params().getBool("EnableWideCamera") : false;
+  bool wide_camera = false;
 
   // start calibration thread
   std::thread thread = std::thread(calibration_thread, wide_camera);
