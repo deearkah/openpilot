@@ -4,7 +4,7 @@
 
 #include <eigen3/Eigen/Dense>
 
-#include "cereal/messaging/messaging.h"
+#include "messaging.hpp"
 #include "cereal/visionipc/visionipc_client.h"
 #include "selfdrive/common/clutil.h"
 #include "selfdrive/common/params.h"

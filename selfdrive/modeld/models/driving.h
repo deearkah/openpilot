@@ -7,7 +7,7 @@
 
 #include <memory>
 
-#include "cereal/messaging/messaging.h"
+#include "messaging.hpp"
 #include "selfdrive/common/mat.h"
 #include "selfdrive/common/modeldata.h"
 #include "selfdrive/common/util.h"

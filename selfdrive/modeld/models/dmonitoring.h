@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "cereal/messaging/messaging.h"
+#include "messaging.hpp"
 #include "selfdrive/common/util.h"
 #include "selfdrive/modeld/models/commonmodel.h"
 #include "selfdrive/modeld/runners/run.h"
