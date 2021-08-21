@@ -110,11 +110,7 @@ void run_model(ModelState &model, VisionIpcClient &vipc_client) {
 
       // tracked dropped frames
       uint32_t vipc_dropped_frames = extra.frame_id - last_vipc_frame_id - 1;
-      float frames_dropped = frame_dropped_filter.update((float)std::min(vipc_dropped_frames, 10U));
-      if (run_count < 10) { // let frame drops warm up
-        frame_dropped_filter.reset(0);
-        frames_dropped = 0.;
-      }
+      float frames_dropped = 0;
 
       float frame_drop_ratio = frames_dropped / (1 + frames_dropped);
 
