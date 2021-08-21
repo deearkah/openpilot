@@ -24,7 +24,6 @@ const double X_IDXS[TRAJECTORY_SIZE] = {
 #ifdef __cplusplus
 
 #include "selfdrive/common/mat.h"
-#include "selfdrive/hardware/hw.h"
 const mat3 fcam_intrinsic_matrix =
     Hardware::TICI() ? (mat3){{2648.0, 0.0, 1928.0 / 2,
                                0.0, 2648.0, 1208.0 / 2,
