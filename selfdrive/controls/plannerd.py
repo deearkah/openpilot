@@ -19,7 +19,7 @@ def plannerd_thread(sm=None, pm=None):
 
   #use_lanelines = not params.get_bool('EndToEndToggle')
   #wide_camera = params.get_bool('EnableWideCamera') if TICI else False
-  use_landlines = True
+  use_lanelines = True
   wide_camera = False
 
 
