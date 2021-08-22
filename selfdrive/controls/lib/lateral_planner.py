@@ -42,9 +42,9 @@ DESIRES = {
 
 
 class LateralPlanner():
-  def __init__(self, CP):
-    self.use_lanelines = True
-    self.LP = LanePlanner()
+  def __init__(self, CP, use_lanelines=True, wide_camera=False):
+    self.use_lanelines = use_lanelines
+    self.LP = LanePlanner(wide_camera)
 
     self.last_cloudlog_t = 0
     self.steer_rate_cost = CP.steerRateCost
