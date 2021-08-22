@@ -691,10 +691,23 @@ struct ModelDataV2 {
     gasDisengageProb @3 :Float32;
     steerOverrideProb @4 :Float32;
     desireState @5 :List(Float32);
-    hardBrakePredicted @6 :Bool;
+    disengagePredictions @6 :DisengagePredictions;
+    hardBrakePredicted @7 :Bool;
   
   }
+
+
+  struct DisengagePredictions {
+    t @0 :List(Float32);
+    brakeDisengageProbs @1 :List(Float32);
+    gasDisengageProbs @2 :List(Float32);
+    steerOverrideProbs @3 :List(Float32);
+    brake3MetersPerSecondSquaredProbs @4 :List(Float32);
+    brake4MetersPerSecondSquaredProbs @5 :List(Float32);
+    brake5MetersPerSecondSquaredProbs @6 :List(Float32);
+  }
 }
+
 
 struct EncodeIndex {
   # picture from camera
