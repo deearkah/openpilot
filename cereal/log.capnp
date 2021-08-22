@@ -691,8 +691,7 @@ struct ModelDataV2 {
     gasDisengageProb @3 :Float32;
     steerOverrideProb @4 :Float32;
     desireState @5 :List(Float32);
-    disengagePredictions @6 :DisengagePredictions;
-    hardBrakePredicted @7 :Bool;
+    hardBrakePredicted @6 :Bool;
   
   }
 }
