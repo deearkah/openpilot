@@ -3,17 +3,23 @@ from common.numpy_fast import clip, interp
 from common.realtime import DT_MDL
 from selfdrive.config import Conversions as CV
 from selfdrive.modeld.constants import T_IDXS
-
+from selfdrive.kegman_conf import kegman_conf
 
 # kph
-V_CRUISE_MAX = 135
+kegman = kegman_conf()
+V_CRUISE_MAX = 144
 V_CRUISE_MIN = 8
-V_CRUISE_DELTA = 8
-V_CRUISE_ENABLE_MIN = 40
+V_CRUISE_DELTA = int(kegman.conf['CruiseDelta'])
+V_CRUISE_ENABLE_MIN = int(kegman.conf['CruiseEnableMin'])
+clip(V_CRUISE_DELTA, 2, 16)
+clip(V_CRUISE_ENABLE_MIN, 1, 80)
+
 LAT_MPC_N = 16
 LON_MPC_N = 32
 CONTROL_N = 17
 CAR_ROTATION_RADIUS = 0.0
+
+
 
 # this corresponds to 80deg/s and 20deg/s steering angle in a toyota corolla
 MAX_CURVATURE_RATES = [0.03762194918267951, 0.003441203371932992]
