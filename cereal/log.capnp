@@ -814,9 +814,9 @@ struct LateralPlan @0xe1e9318e2ae8b51e {
   laneChangeDirection @19 :LaneChangeDirection;
 
 # desired curvatures over next 2.5s in rad/m
-  psis @26 :List(Float32);
-  curvatures @27 :List(Float32);
-  curvatureRates @28 :List(Float32);
+  psis @22 :List(Float32);
+  curvatures @23 :List(Float32);
+  curvatureRates @24 :List(Float32);
 
 
   enum Desire {
