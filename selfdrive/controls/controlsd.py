@@ -413,10 +413,6 @@ class Controls:
     else:
       self.saturated_count = 0
     
-    # Send a "steering required alert" if saturation count has reached the limit
-    if (lac_log.saturated and not CS.steeringPressed) or \
-       (self.saturated_count > STEER_ANGLE_SATURATION_TIMEOUT):
-
     long_plan_age = DT_CTRL * (self.sm.frame - self.sm.rcv_frame['longitudinalPlan'])
     # no greater than dt mpc + dt, to prevent too high extraps
     dt = min(long_plan_age, LON_MPC_STEP + DT_CTRL) + DT_CTRL
