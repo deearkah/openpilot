@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import math
 from cereal import car, log
 from common.numpy_fast import clip
 from common.realtime import sec_since_boot, config_realtime_process, Priority, Ratekeeper, DT_CTRL
