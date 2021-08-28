@@ -406,8 +406,8 @@ class Controls:
     if (lac_log.saturated and not CS.steeringPressed) or \
        (self.saturated_count > STEER_ANGLE_SATURATION_TIMEOUT):
     # Check for difference between desired angle and angle for angle based control
-    angle_control_saturated = self.CP.steerControlType == car.CarParams.SteerControlType.angle and \
-      abs(actuators.steeringAngleDeg - CS.steeringAngleDeg) > STEER_ANGLE_SATURATION_THRESHOLD
+      angle_control_saturated = self.CP.steerControlType == car.CarParams.SteerControlType.angle and \
+        abs(actuators.steeringAngleDeg - CS.steeringAngleDeg) > STEER_ANGLE_SATURATION_THRESHOLD
     if angle_control_saturated and not CS.steeringPressed and self.active:
       self.saturated_count += 1
     else:
