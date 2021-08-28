@@ -375,6 +375,13 @@ class Controls:
   def state_control(self, CS):
     """Given the state, this function returns an actuators packet"""
 
+    # Update VehicleModel
+    params = self.sm['liveParameters']
+    x = max(params.stiffnessFactor, 0.1)
+    sr = max(params.steerRatio, 0.1)
+    self.VM.update_params(x, sr)
+
+
     lat_plan = self.sm['lateralPlan']
     long_plan = self.sm['longitudinalPlan']
 
