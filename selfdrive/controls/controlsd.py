@@ -386,6 +386,37 @@ class Controls:
       self.LaC.reset()
       self.LoC.reset(v_pid=CS.vEgo)
 
+
+    # Steering PID loop and lateral MPC
+    desired_curvature, desired_curvature_rate = get_lag_adjusted_curvature(self.CP, CS.vEgo,
+                                                                             lat_plan.psis,
+                                                                             lat_plan.curvatures,
+                                                                             lat_plan.curvatureRates)
+    actuators.steer, actuators.steeringAngleDeg, lac_log = self.LaC.update(self.active, CS, self.CP, self.VM, params,
+                                                                             desired_curvature, desired_curvature_rate)
+
+    # Check for difference between desired angle and angle for angle based control
+    angle_control_saturated = self.CP.steerControlType == car.CarParams.SteerControlType.angle and \
+      abs(actuators.steeringAngleDeg - CS.steeringAngleDeg) > STEER_ANGLE_SATURATION_THRESHOLD
+    if angle_control_saturated and not CS.steeringPressed and self.active:
+      self.saturated_count += 1
+    else:
+      self.saturated_count = 0
+    # Send a "steering required alert" if saturation count has reached the limit
+    if (lac_log.saturated and not CS.steeringPressed) or \
+       (self.saturated_count > STEER_ANGLE_SATURATION_TIMEOUT):
+    # Check for difference between desired angle and angle for angle based control
+    angle_control_saturated = self.CP.steerControlType == car.CarParams.SteerControlType.angle and \
+      abs(actuators.steeringAngleDeg - CS.steeringAngleDeg) > STEER_ANGLE_SATURATION_THRESHOLD
+    if angle_control_saturated and not CS.steeringPressed and self.active:
+      self.saturated_count += 1
+    else:
+      self.saturated_count = 0
+    
+    # Send a "steering required alert" if saturation count has reached the limit
+    if (lac_log.saturated and not CS.steeringPressed) or \
+       (self.saturated_count > STEER_ANGLE_SATURATION_TIMEOUT):
+
     long_plan_age = DT_CTRL * (self.sm.frame - self.sm.rcv_frame['longitudinalPlan'])
     # no greater than dt mpc + dt, to prevent too high extraps
     dt = min(long_plan_age, LON_MPC_STEP + DT_CTRL) + DT_CTRL
@@ -417,7 +448,14 @@ class Controls:
       if left_deviation or right_deviation:
         self.events.add(EventName.steerSaturated)
 
-    return actuators, v_acc_sol, a_acc_sol, lac_log
+    # Ensure no NaNs/Infs
+    for p in ACTUATOR_FIELDS:
+      if not math.isfinite(getattr(actuators, p)):
+        cloudlog.error(f"actuators.{p} not finite {actuators.to_dict()}")
+        setattr(actuators, p, 0.0)
+
+    return actuators, lac_log
+
 
   def publish_logs(self, CS, start_time, actuators, v_acc, a_acc, lac_log):
     """Send actuators and hud commands to the car, send controlsstate and MPC logging"""
