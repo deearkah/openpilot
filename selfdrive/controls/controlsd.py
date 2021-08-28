@@ -53,6 +53,8 @@ class Controls:
       self.pm = messaging.PubMaster(['sendcan', 'controlsState', 'carState',
                                      'carControl', 'carEvents', 'carParams'])
 
+    params = Params()
+
     self.sm = sm
     if self.sm is None:
       ignore = ['ubloxRaw', 'driverCameraState', 'managerState'] if SIMULATION else None
