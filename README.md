@@ -68,6 +68,18 @@ Release Notes
 
 See openpilot's official release notes here: https://github.com/commaai/openpilot/blob/master/RELEASES.md
 
+#### v0.8.2-088model
+- I've mated the new model to the old 0.8.2 code.  However I cannot recommend this model due to weak lane line recognition, right lane hugging, exit taking, and weak torque even with tuning.
+- Redeeming qualities include:  It seems to recognize intersections as the path plan disappears.
+
+#### v0.8.2-083model
+- ****This is my beloved branch that I will continue to enhance****.  
+- Kp and Ki need to be reduced a bit to avoid wheel shakes.
+
+#### v0.8.3
+- Works on Gold
+- I will try to keep this and 0.8.2-083model synced in terms of enhancements
+
 #### v0.8.2
 - Grey panda still working - will continue to support as long as I can
 - OG Eon still working - will continue to support as long as I can
