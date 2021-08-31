@@ -18,8 +18,8 @@ HwType = log.PandaState.PandaType
 def get_startup_event(car_recognized, controller_available, hw_type):
   if comma_remote and tested_branch:
     event = EventName.startup
-  else:
-    event = EventName.startupMaster
+  #else:
+  #  event = EventName.startupMaster
 
   if not car_recognized:
     event = EventName.startupNoCar
