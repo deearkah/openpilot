@@ -67,7 +67,7 @@ class Controls:
     # wait for one health and one CAN packet
     hw_type = messaging.recv_one(self.sm.sock['pandaState']).pandaState.pandaType 
 
-    #hw_type = messaging.recv_one(self.sm['pandaState']).pandaType
+    hw_type = messaging.recv_one(self.sm['pandaState']).pandaType
     has_relay = hw_type in [PandaType.blackPanda, PandaType.uno, PandaType.dos]
 
     print("Waiting for CAN messages...")
@@ -240,10 +240,10 @@ class Controls:
       self.events.add(EventName.fcw)
 
     # TODO: fix simulator
-    if not SIMULATION:
-      if not NOSENSOR:
-        if not self.sm.alive['ubloxRaw'] and (self.sm.frame > 10. / DT_CTRL):
-          self.events.add(EventName.gpsMalfunction)
+    #if not SIMULATION:
+    #  if not NOSENSOR:
+    #    if not self.sm.alive['ubloxRaw'] and (self.sm.frame > 10. / DT_CTRL):
+    #      self.events.add(EventName.gpsMalfunction)
         #elif not self.sm['liveLocationKalman'].gpsOK and (self.distance_traveled > 1000) and not TICI:
           # Not show in first 1 km to allow for driving out of garage. This event shows after 5 minutes
           #self.events.add(EventName.noGps)
