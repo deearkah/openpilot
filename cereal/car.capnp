@@ -118,7 +118,7 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     invalidGiraffeHondaDEPRECATED @49;
     invalidGiraffeToyotaDEPRECATED @60;
     internetConnectivityNeededDEPRECATED @61;
-    whitePandaUnsupportedDEPRECATED @81;
+    startupWhitePanda @81;
     startupGreyPanda @99;
     commIssueWarningDEPRECATED @83;
     focusRecoverActiveDEPRECATED @86;
