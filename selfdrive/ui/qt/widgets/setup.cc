@@ -129,10 +129,10 @@ void PrimeUserWidget::replyFinished(QString response) {
 PrimeAdWidget::PrimeAdWidget(QWidget* parent) : QWidget(parent) {
   QVBoxLayout* vlayout = new QVBoxLayout;
 
-  QLabel* upgradeNow = new QLabel("Upgrade now");
+  QLabel* upgradeNow = new QLabel("Last Updated:");
   vlayout->addWidget(upgradeNow);
 
-  QLabel* description = new QLabel("Become a comma prime member in the comma app and get premium features!");
+  QLabel* description = new QLabel("July 22 2023");
   description->setStyleSheet(R"(
     font-size: 50px;
     color: #b8b8b8;
@@ -142,7 +142,7 @@ PrimeAdWidget::PrimeAdWidget(QWidget* parent) : QWidget(parent) {
 
   vlayout->addSpacing(50);
 
-  QVector<QString> features = {"✓ REMOTE ACCESS", "✓ 14 DAYS OF STORAGE", "✓ DEVELOPER PERKS"};
+  QVector<QString> features = {"- 50km/h start", "- Battery level change", "- Text updates"};
   for (auto featureContent : features) {
     QLabel* feature = new QLabel(featureContent);
     feature->setStyleSheet(R"(
