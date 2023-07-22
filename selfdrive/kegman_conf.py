@@ -147,8 +147,8 @@ class kegman_conf():
         self.write_config(self.config)
 
     else:
-      self.config = {"cameraOffset":"0.055", "lastTrMode":"1", "battChargeMin":"42", "battChargeMax":"69", \
-                     "wheelTouchSeconds":"600", "accelerationMode":"1","battPercOff":"24", "carVoltageMinEonShutdown":"11800", \
+      self.config = {"cameraOffset":"0.055", "lastTrMode":"1", "battChargeMin":"40", "battChargeMax":"75", \
+                     "wheelTouchSeconds":"600", "accelerationMode":"1","battPercOff":"22", "carVoltageMinEonShutdown":"11800", \
                      "brakeStoppingTarget":"0.25", "tuneGernby":"1", "AutoHold":"0",\
                      "Kp":"-1", "Ki":"-1", "liveParams":"1", "leadDistance":"5", "deadzone":"0.0", \
                      "1barBP0":"-0.1", "1barBP1":"2.25", "2barBP0":"-0.25", "2barBP1":"2.5", "3barBP0":"-0.1", \
