@@ -17,16 +17,16 @@ EventName = car.CarEvent.EventName
 # ******************************************************************************************
 
 # Comment the following line out by putting a # in front to renable kegman.json wheelTouchSeconds - note if you do this Comma will ban your uploads
-_AWARENESS_TIME = 35.  # passive wheel touch total timeout
+#_AWARENESS_TIME = 35.  # passive wheel touch total timeout
 
 # UNcomment the following line back in by deleting the # in front to re-enable kegman.json wheelTouchSeconds - note if you do this comma will ban your uploads
-#_AWARENESS_TIME = min(int(kegman.conf['wheelTouchSeconds']), 600)    # x minutes limit without user touching steering wheels make the car enter a terminal status
+_AWARENESS_TIME = min(int(kegman.conf['wheelTouchSeconds']), 9000)    # x minutes limit without user touching steering wheels make the car enter a terminal status
 
-_AWARENESS_PRE_TIME_TILL_TERMINAL = 12.
-_AWARENESS_PROMPT_TIME_TILL_TERMINAL = 6.
-_DISTRACTED_TIME = 11.
-_DISTRACTED_PRE_TIME_TILL_TERMINAL = 8.
-_DISTRACTED_PROMPT_TIME_TILL_TERMINAL = 6.
+_AWARENESS_PRE_TIME_TILL_TERMINAL = 1200.
+_AWARENESS_PROMPT_TIME_TILL_TERMINAL = 60.
+_DISTRACTED_TIME = 1300.
+_DISTRACTED_PRE_TIME_TILL_TERMINAL = 1200.
+_DISTRACTED_PROMPT_TIME_TILL_TERMINAL = 60.
 
 _FACE_THRESHOLD = 0.5
 _PARTIAL_FACE_THRESHOLD = 0.5
