@@ -147,8 +147,8 @@ class kegman_conf():
         self.write_config(self.config)
 
     else:
-      self.config = {"cameraOffset":"0.055", "lastTrMode":"1", "battChargeMin":"40", "battChargeMax":"75", \
-                     "wheelTouchSeconds":"600", "accelerationMode":"1","battPercOff":"22", "carVoltageMinEonShutdown":"11800", \
+      self.config = {"cameraOffset":"0.05", "lastTrMode":"1", "battChargeMin":"35", "battChargeMax":"75", \
+                     "wheelTouchSeconds":"9000", "accelerationMode":"1","battPercOff":"22", "carVoltageMinEonShutdown":"11000", \
                      "brakeStoppingTarget":"0.25", "tuneGernby":"1", "AutoHold":"0",\
                      "Kp":"-1", "Ki":"-1", "liveParams":"1", "leadDistance":"5", "deadzone":"0.0", \
                      "1barBP0":"-0.1", "1barBP1":"2.25", "2barBP0":"-0.25", "2barBP1":"2.5", "3barBP0":"-0.1", \
@@ -157,7 +157,7 @@ class kegman_conf():
                      "steerRatio":"-1", "steerRateCost":"-1", "slowOnCurves":"0", "Kf":"-1", \
                      "sR_boost":"0", "sR_BP0":"0", "sR_BP1":"0", "sR_time":"1", \
                      "ALCnudgeLess":"0", "ALCminSpeed":"20.1168", "ALCtimer":"2.0", "CruiseDelta":"8", \
-                     "CruiseEnableMin":"50", "epsModded": "0", "laneLess": "0"}
+                     "CruiseEnableMin":"40", "epsModded": "0", "laneLess": "0"}
 
 
       self.write_config(self.config)
