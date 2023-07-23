@@ -255,8 +255,8 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
 
   EventName.startupGreyPanda: {
     ET.PERMANENT: Alert(
-      "WARNING: Grey panda is not supported.",
-      "But Kegman re-enabled it.  Enjoy.",
+      "Grey panda detected.",
+      "System starting.",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOWER, VisualAlert.none, AudibleAlert.none, 0., 0., 15.),
   },
