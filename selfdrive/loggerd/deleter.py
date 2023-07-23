@@ -7,7 +7,7 @@ from selfdrive.loggerd.config import ROOT, get_available_bytes, get_available_pe
 from selfdrive.loggerd.uploader import listdir_by_creation
 
 MIN_BYTES = 5 * 1024 * 1024 * 1024
-MIN_PERCENT = 33 #nand doesn't like being full
+MIN_PERCENT = 40 #nand doesn't like being full
 
 
 def deleter_thread(exit_event):
