@@ -142,7 +142,7 @@ PrimeAdWidget::PrimeAdWidget(QWidget* parent) : QWidget(parent) {
 
   vlayout->addSpacing(50);
 
-  QVector<QString> features = {"- 50km/h start", "- Battery level change", "- Text updates"};
+  QVector<QString> features = {"- driver_monitor.py values", "- Battery level change", "- Text updates"};
   for (auto featureContent : features) {
     QLabel* feature = new QLabel(featureContent);
     feature->setStyleSheet(R"(
